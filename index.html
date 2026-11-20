@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hamdy &amp; Esraa — Wedding Invitation | 23 August 2026</title>
+
+  <!-- Google Fonts matching the exact Script, Serif & Arabic typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ==========================================================================
+       1. DESIGN TOKENS & RESET
+       ========================================================================== */
+    :root {
+      --bg-linen: #F4F2EA;
+      --bg-sage: #E6E8D4;
+      --ink-brown: #5D2F24;
+      --ink-brown-light: #7A4B3E;
+      --btn-crimson: #5D0A07;
+      --btn-crimson-hover: #7A110D;
+      --surface-white: #FFFFFF;
+      --border-brown: rgba(93, 47, 36, 0.25);
+
+      --font-script: 'Alex Brush', cursive;
+      --font-serif-display: 'Cormorant Garamond', serif;
+      --font-serif-body: 'Lora', serif;
+      --font-sans: 'Montserrat', sans-serif;
+      --font-arabic: 'Amiri', serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg-linen);
+      color: var(--ink-brown);
+      font-family: var(--font-serif-body);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font-family: inherit;
+    }
+
+    .page-shell {
+      width: 100%;
+      max-width: 560px;
+      margin-inline: auto;
+      background-color: var(--bg-linen);
+      box-shadow: 0 0 60px rgba(93, 47, 36, 0.08);
+      position: relative;
+    }
+
+    .section-block {
+      padding: 48px 28px;
+      text-align: center;
+    }
+
+    .script-heading {
+      font-family: var(--font-script);
+      font-size: clamp(2.65rem, 8vw, 3.35rem);
+      font-weight: 400;
+      color: var(--ink-brown);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    /* Botanical Floral Divider */
+    .botanical-divider {
+      width: 240px;
+      margin: 12px auto 26px;
+      color: var(--ink-brown);
+      opacity: 0.85;
+    }
+
+    /* Scroll Reveal Utility */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================================================
+       2. HERO SECTION (FULL-BLEED ROTUNDA WEDDING PORTRAIT)
+       ========================================================================== */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 820px;
+      height: 100svh;
+      max-height: 920px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      padding: 88px 24px 44px;
+      overflow: hidden;
+      background-color: #C7AD94;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      filter: sepia(0.14) saturate(1.05) brightness(0.92);
+      transform: scale(1.02);
+      transition: transform 8s ease-out;
+    }
+
+    .hero:hover .hero__bg {
+      transform: scale(1.06);
+    }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(62, 38, 22, 0.22) 0%,
+        rgba(62, 38, 22, 0.12) 45%,
+        rgba(46, 28, 16, 0.42) 100%
+      );
+      pointer-events: none;
+    }
+
+    .hero__top {
+      position: relative;
+      z-index: 2;
+      margin-top: 24px;
+    }
+
+    .hero__names {
+      font-family: var(--font-script);
+      font-size: clamp(4.2rem, 15vw, 5.6rem);
+      font-weight: 400;
+      color: #FFFFFF;
+      line-height: 0.96;
+      text-shadow: 0 4px 22px rgba(45, 24, 12, 0.42);
+    }
+
+    .hero__amp {
+      display: block;
+      font-size: 0.65em;
+      margin-block: 4px;
+    }
+
+    .hero__bottom {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 6px;
+    }
+
+    .hero__arabic {
+      font-family: var(--font-arabic);
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-shadow: 0 2px 12px rgba(32, 16, 8, 0.55);
+    }
+
+    .hero__tagline {
+      font-family: var(--font-serif-body);
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      color: #FFFFFF;
+      text-shadow: 0 2px 12px rgba(32, 16, 8, 0.55);
+    }
+
+    .hero__date {
+      font-family: var(--font-serif-body);
+      font-size: 0.98rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      color: #FFFFFF;
+      margin-top: 10px;
+      text-shadow: 0 2px 12px rgba(32, 16, 8, 0.55);
+    }
+
+    /* ==========================================================================
+       3. COUNTDOWN BAND
+       ========================================================================== */
+    .countdown-band {
+      background-color: var(--bg-sage);
+      padding: 42px 20px 46px;
+      text-align: center;
+    }
+
+    .countdown-band .script-heading {
+      margin-bottom: 18px;
+    }
+
+    .countdown-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .countdown-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 62px;
+    }
+
+    .countdown-unit__num {
+      font-family: var(--font-serif-display);
+      font-size: clamp(2.8rem, 10vw, 3.6rem);
+      font-weight: 500;
+      color: var(--ink-brown);
+      line-height: 1;
+    }
+
+    .countdown-unit__label {
+      font-family: var(--font-serif-body);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--ink-brown);
+      margin-top: 8px;
+    }
+
+    .countdown-sep {
+      font-family: var(--font-serif-display);
+      font-size: 2.6rem;
+      color: var(--ink-brown);
+      line-height: 1;
+      padding-top: 2px;
+    }
+
+    /* ==========================================================================
+       4. WELCOME SECTION
+       ========================================================================== */
+    .welcome-section {
+      padding: 52px 32px 24px;
+      text-align: center;
+    }
+
+    .welcome-text {
+      font-family: var(--font-serif-body);
+      font-size: 1.12rem;
+      color: var(--ink-brown);
+      line-height: 1.85;
+      max-width: 430px;
+      margin: 0 auto 38px;
+    }
+
+    /* ==========================================================================
+       5. WHEN & WHERE + INTERACTIVE VILLA SAUDI MAP
+       ========================================================================== */
+    .when-where-section {
+      padding: 16px 24px 44px;
+      text-align: center;
+    }
+
+    .time-schedule {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin: 10px auto 34px;
+      max-width: 420px;
+    }
+
+    .time-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 92px;
+    }
+
+    .time-block__hour {
+      font-family: var(--font-serif-display);
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--ink-brown);
+      line-height: 1.1;
+    }
+
+    .time-block__caption {
+      font-family: var(--font-serif-body);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: var(--ink-brown);
+      margin-top: 8px;
+    }
+
+    .time-divider {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(-10px);
+    }
+
+    .time-divider__line {
+      height: 1.5px;
+      flex: 1;
+      background: linear-gradient(90deg, transparent, var(--ink-brown));
+    }
+
+    .time-divider__line--right {
+      background: linear-gradient(90deg, var(--ink-brown), transparent);
+    }
+
+    .time-divider__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--ink-brown);
+      margin-inline: 4px;
+    }
+
+    .venue-title {
+      font-family: var(--font-serif-body);
+      font-size: 1.45rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--ink-brown);
+      margin: 6px 0 26px;
+    }
+
+    /* Map Container matching Villa Saudi Embed */
+    .map-wrapper {
+      position: relative;
+      width: 100%;
+      height: 295px;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(93, 47, 36, 0.18);
+      box-shadow: 0 8px 24px rgba(93, 47, 36, 0.08);
+      background: #4A545D;
+    }
+
+    .map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: brightness(0.88) contrast(1.06);
+    }
+
+    .map-card-overlay {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 235px;
+      background: #FFFFFF;
+      border-radius: 4px;
+      padding: 10px 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
+      text-align: left;
+      z-index: 3;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    .map-card-overlay__title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #202124;
+      margin-bottom: 2px;
+    }
+
+    .map-card-overlay__sub {
+      font-size: 0.66rem;
+      color: #5F6368;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 6px;
+    }
+
+    .map-card-overlay__rating {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.7rem;
+      margin-bottom: 8px;
+    }
+
+    .map-card-overlay__score {
+      font-weight: 600;
+      color: #202124;
+    }
+
+    .map-card-overlay__stars {
+      color: #FABB05;
+    }
+
+    .map-card-overlay__count {
+      color: #1A73E8;
+      text-decoration: underline;
+    }
+
+    .map-card-overlay__actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-open-maps {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #1A73E8;
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+      transition: background 0.2s ease;
+    }
+
+    .btn-open-maps:hover {
+      background: #1557B0;
+    }
+
+    .btn-directions-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid #DADCE0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFFFFF;
+    }
+
+    .btn-google-maps-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 28px;
+      background-color: var(--ink-brown);
+      color: #FFFFFF;
+      font-family: var(--font-serif-body);
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 11px 26px;
+      border-radius: 8px;
+      box-shadow: 0 6px 16px rgba(93, 47, 36, 0.22);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .btn-google-maps-pill:hover {
+      background-color: #462118;
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       6. DRESS CODE & GIFTS SECTION
+       ========================================================================== */
+    .dress-code-section {
+      padding: 18px 20px 36px;
+      text-align: center;
+    }
+
+    .attire-trio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      align-items: end;
+      max-width: 470px;
+      margin: 12px auto 42px;
+    }
+
+    .attire-figure {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.35s ease;
+    }
+
+    .attire-figure:hover {
+      transform: translateY(-5px);
+    }
+
+    .attire-figure svg {
+      width: 100%;
+      height: auto;
+      max-height: 295px;
+    }
+
+    .gifts-card {
+      background-color: var(--bg-sage);
+      border: 1px solid rgba(93, 47, 36, 0.32);
+      border-radius: 22px;
+      padding: 34px 24px 38px;
+      margin-inline: auto;
+      max-width: 470px;
+    }
+
+    .gifts-card .script-heading {
+      margin-bottom: 18px;
+    }
+
+    .gifts-card__text {
+      font-family: var(--font-serif-body);
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      color: var(--ink-brown);
+      line-height: 2.1;
+    }
+
+    /* ==========================================================================
+       7. LEAVE A MESSAGE (INTERACTIVE RSVP & GUESTBOOK FORM)
+       ========================================================================== */
+    .rsvp-section {
+      padding: 28px 34px 44px;
+      text-align: center;
+    }
+
+    .rsvp-subtitle {
+      font-family: var(--font-serif-body);
+      font-size: 0.98rem;
+      letter-spacing: 0.04em;
+      color: var(--ink-brown);
+      line-height: 1.95;
+      margin-bottom: 32px;
+    }
+
+    .rsvp-form {
+      text-align: left;
+      max-width: 410px;
+      margin-inline: auto;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-brown);
+      margin-bottom: 10px;
+    }
+
+    .required-dot {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: rgba(93, 47, 36, 0.14);
+      color: var(--ink-brown);
+      font-size: 0.72rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 44px;
+      background-color: var(--surface-white);
+      border: 1px solid rgba(93, 47, 36, 0.22);
+      border-radius: 8px;
+      padding: 0 14px;
+      font-size: 0.95rem;
+      color: var(--ink-brown);
+      box-shadow: 0 2px 6px rgba(93, 47, 36, 0.04);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--ink-brown);
+      box-shadow: 0 0 0 3px rgba(93, 47, 36, 0.12);
+    }
+
+    .rsvp-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .rsvp-option {
+      width: 245px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background-color: var(--surface-white);
+      border: 1px solid rgba(93, 47, 36, 0.22);
+      border-radius: 8px;
+      padding: 9px 12px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(93, 47, 36, 0.05);
+      transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.15s ease;
+    }
+
+    .rsvp-option:hover {
+      border-color: var(--ink-brown);
+      transform: translateX(2px);
+    }
+
+    .rsvp-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .rsvp-option__badge {
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+      background-color: #7D5549;
+      color: #FFFFFF;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s ease;
+    }
+
+    .rsvp-option__text {
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--ink-brown);
+    }
+
+    .rsvp-option.is-selected {
+      border: 1.5px solid var(--ink-brown);
+      background-color: #FCF9F2;
+    }
+
+    .rsvp-option.is-selected .rsvp-option__badge {
+      background-color: var(--btn-crimson);
+    }
+
+    .btn-send {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      background-color: var(--btn-crimson);
+      color: #FFFFFF;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 22px;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(93, 10, 7, 0.24);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-send:hover {
+      background-color: var(--btn-crimson-hover);
+      transform: translateY(-2px);
+    }
+
+    .rsvp-feedback {
+      margin-top: 16px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      display: none;
+    }
+
+    .rsvp-feedback.is-error {
+      display: block;
+      background-color: #FDECEA;
+      color: #8A1C14;
+      border: 1px solid #F5C2C0;
+    }
+
+    .rsvp-feedback.is-success {
+      display: block;
+      background-color: var(--bg-sage);
+      color: var(--ink-brown);
+      border: 1px solid rgba(93, 47, 36, 0.3);
+    }
+
+    /* ==========================================================================
+       8. CHILDHOOD KEEPSAKE FRAME & DESIGNER FOOTER
+       ========================================================================== */
+    .keepsake-footer {
+      padding: 12px 24px 42px;
+      text-align: center;
+    }
+
+    .scalloped-frame-wrap {
+      width: 310px;
+      max-width: 100%;
+      margin: 18px auto 34px;
+      position: relative;
+    }
+
+    .scalloped-frame-svg {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 10px 24px rgba(93, 47, 36, 0.12));
+    }
+
+    .designer-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 405px;
+      border: 1.5px solid var(--ink-brown);
+      border-radius: 10px;
+      padding: 8px 14px;
+      margin-bottom: 24px;
+      background-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .designer-badge__end {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .designer-badge__bar {
+      width: 2px;
+      height: 22px;
+      background-color: var(--ink-brown);
+    }
+
+    .designer-badge__box {
+      width: 16px;
+      height: 16px;
+      border: 1.5px solid var(--ink-brown);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .designer-badge__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: var(--ink-brown);
+    }
+
+    .designer-badge__text {
+      font-family: var(--font-serif-body);
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      color: var(--ink-brown);
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 42px;
+      margin-bottom: 22px;
+    }
+
+    .social-links a {
+      color: var(--ink-brown);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px);
+      opacity: 0.75;
+    }
+
+    .copyright-text {
+      font-family: var(--font-serif-body);
+      font-size: 0.88rem;
+      color: var(--ink-brown);
+    }
+
+    @media (max-width: 420px) {
+      .countdown-row {
+        gap: 6px;
+      }
+      .countdown-unit {
+        min-width: 54px;
+      }
+      .social-links {
+        gap: 28px;
+      }
+      .designer-badge__text {
+        font-size: 0.78rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <!-- =====================================================================
+         1. HERO SECTION
+         ===================================================================== -->
+    <header class="hero" id="top">
+      <!-- Verified high-resolution classical sunset column wedding photograph -->
+      <img
+        class="hero__bg"
+        src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1080&q=85"
+        alt="Hamdy and Esraa walking toward sunset classical wedding pavilion"
+      />
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="hero__top reveal">
+        <h1 class="hero__names">
+          Hamdy
+          <span class="hero__amp">&amp;</span>
+          Esraa
+        </h1>
+      </div>
+
+      <div class="hero__bottom reveal">
+        <p class="hero__arabic" lang="ar" dir="rtl">الي الابد معا</p>
+        <p class="hero__tagline">FOREVER TOGETHER</p>
+        <p class="hero__date">23 AUGUST 2026</p>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===================================================================
+           2. COUNTDOWN SECTION
+           =================================================================== -->
+      <section class="countdown-band" id="countdown" aria-labelledby="countdown-heading">
+        <h2 class="script-heading reveal" id="countdown-heading">Countdown</h2>
+
+        <div class="countdown-row reveal" role="timer" aria-live="polite">
+          <div class="countdown-unit">
+            <span class="countdown-unit__num" id="cd-days">0</span>
+            <span class="countdown-unit__label">DAYS</span>
+          </div>
+          <span class="countdown-sep" aria-hidden="true">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-unit__num" id="cd-hours">00</span>
+            <span class="countdown-unit__label">HOURS</span>
+          </div>
+          <span class="countdown-sep" aria-hidden="true">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-unit__num" id="cd-minutes">00</span>
+            <span class="countdown-unit__label">MINUTES</span>
+          </div>
+          <span class="countdown-sep" aria-hidden="true">:</span>
+          <div class="countdown-unit">
+            <span class="countdown-unit__num" id="cd-seconds">00</span>
+            <span class="countdown-unit__label">SECONDS</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           3. WELCOME SECTION
+           =================================================================== -->
+      <section class="welcome-section" id="welcome">
+        <h2 class="script-heading reveal">Welcome !</h2>
+
+        <p class="welcome-text reveal">
+          From the very first moment, we knew our story was meant to be celebrated. We would be honoured to have you with us as we begin this new chapter &mdash; surrounded by the people we love most.
+        </p>
+
+        <!-- Botanical Floral Divider SVG -->
+        <div class="botanical-divider reveal" aria-hidden="true">
+          <svg viewBox="0 0 320 64" fill="none" stroke="currentColor" stroke-width="1.1">
+            <!-- Center Blossom -->
+            <circle cx="160" cy="34" r="5" fill="currentColor" />
+            <path d="M160 29 C153 14, 167 14, 160 29 Z" />
+            <path d="M164 31 C178 20, 183 33, 165 34 Z" />
+            <path d="M163 37 C175 49, 163 56, 159 39 Z" />
+            <path d="M156 37 C145 49, 138 37, 155 34 Z" />
+            <path d="M156 31 C142 21, 149 12, 158 29 Z" />
+            <!-- Left & Right Stems -->
+            <path d="M144 35 Q95 36, 22 33" />
+            <path d="M176 35 Q225 36, 298 33" />
+            <!-- Left Leaves -->
+            <path d="M128 35 C118 22, 106 22, 102 31 C111 35, 120 35, 128 35 Z" />
+            <path d="M100 35 C88 21, 74 22, 70 31 C80 35, 90 35, 100 35 Z" />
+            <path d="M72 34 C60 22, 48 23, 44 31 C54 34, 63 34, 72 34 Z" />
+            <path d="M118 36 C108 48, 96 48, 92 40 C102 36, 110 36, 118 36 Z" />
+            <path d="M88 36 C76 49, 64 48, 60 40 C70 36, 79 36, 88 36 Z" />
+            <path d="M58 35 C46 46, 35 45, 32 38 C41 35, 50 35, 58 35 Z" />
+            <!-- Right Leaves -->
+            <path d="M192 35 C202 22, 214 22, 218 31 C209 35, 200 35, 192 35 Z" />
+            <path d="M220 35 C232 21, 246 22, 250 31 C240 35, 230 35, 220 35 Z" />
+            <path d="M248 34 C260 22, 272 23, 276 31 C266 34, 257 34, 248 34 Z" />
+            <path d="M202 36 C212 48, 224 48, 228 40 C218 36, 210 36, 202 36 Z" />
+            <path d="M232 36 C244 49, 256 48, 260 40 C250 36, 241 36, 232 36 Z" />
+            <path d="M262 35 C274 46, 285 45, 288 38 C279 35, 270 35, 262 35 Z" />
+          </svg>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           4. WHEN & WHERE + VILLA SAUDI MAP
+           =================================================================== -->
+      <section class="when-where-section" id="when-where">
+        <h2 class="script-heading reveal">When &amp; Where</h2>
+
+        <div class="time-schedule reveal">
+          <div class="time-block">
+            <span class="time-block__hour">8 PM</span>
+            <span class="time-block__caption">STARTS</span>
+          </div>
+
+          <div class="time-divider" aria-hidden="true">
+            <span class="time-divider__line"></span>
+            <span class="time-divider__dot"></span>
+            <span class="time-divider__line time-divider__line--right"></span>
+          </div>
+
+          <div class="time-block">
+            <span class="time-block__hour">11 PM</span>
+            <span class="time-block__caption">ENDS</span>
+          </div>
+        </div>
+
+        <!-- Botanical Divider -->
+        <div class="botanical-divider reveal" aria-hidden="true">
+          <svg viewBox="0 0 320 64" fill="none" stroke="currentColor" stroke-width="1.1">
+            <circle cx="160" cy="34" r="5" fill="currentColor" />
+            <path d="M160 29 C153 14, 167 14, 160 29 Z" />
+            <path d="M164 31 C178 20, 183 33, 165 34 Z" />
+            <path d="M163 37 C175 49, 163 56, 159 39 Z" />
+            <path d="M156 37 C145 49, 138 37, 155 34 Z" />
+            <path d="M156 31 C142 21, 149 12, 158 29 Z" />
+            <path d="M144 35 Q95 36, 22 33" />
+            <path d="M176 35 Q225 36, 298 33" />
+            <path d="M128 35 C118 22, 106 22, 102 31 C111 35, 120 35, 128 35 Z" />
+            <path d="M100 35 C88 21, 74 22, 70 31 C80 35, 90 35, 100 35 Z" />
+            <path d="M72 34 C60 22, 48 23, 44 31 C54 34, 63 34, 72 34 Z" />
+            <path d="M118 36 C108 48, 96 48, 92 40 C102 36, 110 36, 118 36 Z" />
+            <path d="M88 36 C76 49, 64 48, 60 40 C70 36, 79 36, 88 36 Z" />
+            <path d="M192 35 C202 22, 214 22, 218 31 C209 35, 200 35, 192 35 Z" />
+            <path d="M220 35 C232 21, 246 22, 250 31 C240 35, 230 35, 220 35 Z" />
+            <path d="M248 34 C260 22, 272 23, 276 31 C266 34, 257 34, 248 34 Z" />
+            <path d="M202 36 C212 48, 224 48, 228 40 C218 36, 210 36, 202 36 Z" />
+            <path d="M232 36 C244 49, 256 48, 260 40 C250 36, 241 36, 232 36 Z" />
+          </svg>
+        </div>
+
+        <h3 class="venue-title reveal">VILAA SAUDI</h3>
+
+        <div class="map-wrapper reveal">
+          <iframe
+            title="Villa Saudi Wedding Hall Location Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3451.841251074284!2d31.21799297555586!3d30.09873287489635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145841d58b4e3c57%3A0x6f2d8b7b0e8d4d2a!2sVilla%20Saudi!5e0!3m2!1sen!2seg!4v1700000000001!5m2!1sen!2seg"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+
+          <!-- Floating White Place Card matching screenshot -->
+          <div class="map-card-overlay">
+            <p class="map-card-overlay__title">Villa Saudi</p>
+            <p class="map-card-overlay__sub" dir="rtl">
+              ... ونزلة الزمر، قسم الوراق، محافظة الجيزة 3834001
+            </p>
+            <div class="map-card-overlay__rating">
+              <span class="map-card-overlay__score">4.3</span>
+              <span class="map-card-overlay__stars">★★★★★</span>
+              <span class="map-card-overlay__count">(888)</span>
+            </div>
+            <div class="map-card-overlay__actions">
+              <a
+                href="https://maps.google.com/?q=Villa+Saudi+Al+Warraq+Giza"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-open-maps"
+              >
+                <span>Open in Maps</span>
+              </a>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=Villa+Saudi+Giza"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-directions-circle"
+                title="Directions"
+                aria-label="Get directions to Villa Saudi"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#1A73E8">
+                  <path d="M21.71 11.29l-9-9a.996.996 0 00-1.41 0l-9 9a.996.996 0 000 1.41l9 9c.39.39 1.02.39 1.41 0l9-9a.996.996 0 000-1.41zM14 14.5V12h-4v3H8v-4c0-.55.45-1 1-1h5V7.5l3.5 3.5-3.5 3.5z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="https://maps.google.com/?q=Villa+Saudi+Al+Warraq+Giza"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-google-maps-pill reveal"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>Google Maps</span>
+        </a>
+      </section>
+
+      <!-- ===================================================================
+           5. DRESS CODE & GIFTS SECTION
+           =================================================================== -->
+      <section class="dress-code-section" id="dress-code">
+        <!-- Botanical Divider -->
+        <div class="botanical-divider reveal" aria-hidden="true">
+          <svg viewBox="0 0 320 64" fill="none" stroke="currentColor" stroke-width="1.1">
+            <circle cx="160" cy="34" r="5" fill="currentColor" />
+            <path d="M160 29 C153 14, 167 14, 160 29 Z" />
+            <path d="M164 31 C178 20, 183 33, 165 34 Z" />
+            <path d="M163 37 C175 49, 163 56, 159 39 Z" />
+            <path d="M156 37 C145 49, 138 37, 155 34 Z" />
+            <path d="M156 31 C142 21, 149 12, 158 29 Z" />
+            <path d="M144 35 Q95 36, 22 33" />
+            <path d="M176 35 Q225 36, 298 33" />
+            <path d="M128 35 C118 22, 106 22, 102 31 C111 35, 120 35, 128 35 Z" />
+            <path d="M100 35 C88 21, 74 22, 70 31 C80 35, 90 35, 100 35 Z" />
+            <path d="M72 34 C60 22, 48 23, 44 31 C54 34, 63 34, 72 34 Z" />
+            <path d="M118 36 C108 48, 96 48, 92 40 C102 36, 110 36, 118 36 Z" />
+            <path d="M88 36 C76 49, 64 48, 60 40 C70 36, 79 36, 88 36 Z" />
+            <path d="M192 35 C202 22, 214 22, 218 31 C209 35, 200 35, 192 35 Z" />
+            <path d="M220 35 C232 21, 246 22, 250 31 C240 35, 230 35, 220 35 Z" />
+            <path d="M248 34 C260 22, 272 23, 276 31 C266 34, 257 34, 248 34 Z" />
+            <path d="M202 36 C212 48, 224 48, 228 40 C218 36, 210 36, 202 36 Z" />
+            <path d="M232 36 C244 49, 256 48, 260 40 C250 36, 241 36, 232 36 Z" />
+          </svg>
+        </div>
+
+        <h2 class="script-heading reveal">Dress code</h2>
+
+        <!-- Three Attire Illustrations (Lavender Gown, Sky-Blue Gown, Black Suit) -->
+        <div class="attire-trio reveal" aria-label="Formal attire inspiration: lavender gown, light blue gown, and black suit">
+          <!-- Figure 1: Lavender Evening Gown -->
+          <div class="attire-figure">
+            <svg viewBox="0 0 160 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Hair Back -->
+              <path d="M55 44 C52 72, 54 102, 58 122 L102 122 C106 102, 108 72, 105 44 Z" fill="#3D2618" />
+              <!-- Neck & Shoulders -->
+              <rect x="74" y="54" width="12" height="16" rx="5" fill="#F3D2C1" />
+              <path d="M54 74 C60 66, 100 66, 106 74 L112 112 L101 114 L96 86 L64 86 L59 114 L48 112 Z" fill="#F3D2C1" />
+              <!-- Head & Hair Front -->
+              <ellipse cx="80" cy="40" rx="13" ry="16" fill="#F5D7C6" />
+              <path d="M66 38 C66 22, 94 22, 94 38 C91 31, 84 29, 80 33 C76 29, 69 31, 66 38 Z" fill="#3D2618" />
+              <!-- Lavender Dress Bodice & Sleeves -->
+              <path d="M53 72 L64 70 L66 84 L51 86 Z" fill="#B592C8" />
+              <path d="M107 72 L96 70 L94 84 L109 86 Z" fill="#B592C8" />
+              <path d="M64 72 L96 72 L93 108 L67 108 Z" fill="#BC9ACF" />
+              <!-- Pearl Belt -->
+              <line x1="67" y1="108" x2="93" y2="108" stroke="#EFE6F5" stroke-width="2.5" stroke-dasharray="2 2" />
+              <!-- Flowing Lavender Skirt -->
+              <path d="M67 108 L93 108 C108 185, 118 275, 134 334 C122 342, 105 338, 92 335 C80 340, 68 340, 56 335 C42 340, 28 342, 22 332 C38 272, 50 185, 67 108 Z" fill="#B997CC" />
+              <path d="M76 112 L72 334 M85 112 L94 334" stroke="#9F7AB4" stroke-width="1.2" opacity="0.55" />
+              <!-- Arms -->
+              <path d="M51 86 L46 124 L66 152 L69 149 L53 122 L58 86 Z" fill="#F3D2C1" />
+              <path d="M109 86 L114 124 L104 148 L100 146 L107 122 L102 86 Z" fill="#F3D2C1" />
+            </svg>
+          </div>
+
+          <!-- Figure 2: Sky-Blue Evening Gown -->
+          <div class="attire-figure">
+            <svg viewBox="0 0 160 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M55 44 C52 72, 54 102, 58 122 L102 122 C106 102, 108 72, 105 44 Z" fill="#3D2618" />
+              <rect x="74" y="54" width="12" height="16" rx="5" fill="#F3D2C1" />
+              <path d="M54 74 C60 66, 100 66, 106 74 L112 112 L101 114 L96 86 L64 86 L59 114 L48 112 Z" fill="#F3D2C1" />
+              <ellipse cx="80" cy="40" rx="13" ry="16" fill="#F5D7C6" />
+              <path d="M66 38 C66 22, 94 22, 94 38 C91 31, 84 29, 80 33 C76 29, 69 31, 66 38 Z" fill="#3D2618" />
+              <!-- Sky Blue Bodice & Sleeves -->
+              <path d="M53 72 L64 70 L66 84 L51 86 Z" fill="#6BB3D1" />
+              <path d="M107 72 L96 70 L94 84 L109 86 Z" fill="#6BB3D1" />
+              <path d="M64 72 L96 72 L93 108 L67 108 Z" fill="#77BBD7" />
+              <line x1="67" y1="108" x2="93" y2="108" stroke="#E4F4FA" stroke-width="2.5" stroke-dasharray="2 2" />
+              <!-- Flowing Sky Blue Skirt -->
+              <path d="M67 108 L93 108 C108 185, 118 275, 134 334 C122 342, 105 338, 92 335 C80 340, 68 340, 56 335 C42 340, 28 342, 22 332 C38 272, 50 185, 67 108 Z" fill="#75B9D6" />
+              <path d="M76 112 L72 334 M85 112 L94 334" stroke="#569AB8" stroke-width="1.2" opacity="0.55" />
+              <path d="M51 86 L46 124 L66 152 L69 149 L53 122 L58 86 Z" fill="#F3D2C1" />
+              <path d="M109 86 L114 124 L104 148 L100 146 L107 122 L102 86 Z" fill="#F3D2C1" />
+            </svg>
+          </div>
+
+          <!-- Figure 3: Black Formal Suit & Tie -->
+          <div class="attire-figure">
+            <svg viewBox="0 0 150 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Neck -->
+              <rect x="68" y="52" width="14" height="16" rx="4" fill="#F3D2C1" />
+              <!-- Head & Styled Dark Hair -->
+              <ellipse cx="75" cy="38" rx="13" ry="16" fill="#F5D7C6" />
+              <path d="M61 36 C59 20, 74 14, 86 20 C93 24, 92 35, 88 38 C86 30, 78 28, 73 31 C68 28, 63 32, 61 36 Z" fill="#141414" />
+              <!-- White Dress Shirt & Black Tie -->
+              <path d="M62 66 L88 66 L85 130 L65 130 Z" fill="#FFFFFF" />
+              <path d="M73 70 L77 70 L79 116 L75 124 L71 116 Z" fill="#181818" />
+              <!-- Black Suit Jacket -->
+              <path d="M44 74 C48 67, 62 66, 62 66 L75 106 L88 66 C88 66, 102 67, 106 74 L112 162 L102 164 L98 112 L96 184 L54 184 L52 112 L48 164 L38 162 Z" fill="#1F1F1F" />
+              <!-- Lapels -->
+              <path d="M62 66 L75 106 L64 102 L58 76 Z" fill="#121212" />
+              <path d="M88 66 L75 106 L86 102 L92 76 Z" fill="#121212" />
+              <!-- Shirt Cuffs & Hands -->
+              <rect x="39" y="162" width="9" height="4" fill="#FFFFFF" />
+              <rect x="102" y="162" width="9" height="4" fill="#FFFFFF" />
+              <ellipse cx="43" cy="173" rx="5" ry="8" fill="#F3D2C1" />
+              <ellipse cx="107" cy="173" rx="5" ry="8" fill="#F3D2C1" />
+              <!-- Black Trousers -->
+              <path d="M55 184 L74 184 L72 328 L57 328 Z" fill="#181818" />
+              <path d="M76 184 L95 184 L93 328 L78 328 Z" fill="#181818" />
+              <!-- Black Dress Shoes -->
+              <path d="M57 328 L71 328 L71 342 C66 347, 54 346, 53 340 Z" fill="#0B0B0B" />
+              <path d="M79 328 L93 328 L97 340 C96 346, 84 347, 79 342 Z" fill="#0B0B0B" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Gifts Card -->
+        <div class="gifts-card reveal">
+          <h2 class="script-heading">Gifts</h2>
+          <p class="gifts-card__text">
+            YOUR PRESENCE IS THE GREATEST GIFT<br />
+            WE COULD RECEIVE .
+          </p>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           6. LEAVE A MESSAGE (INTERACTIVE RSVP FORM)
+           =================================================================== -->
+      <section class="rsvp-section" id="rsvp">
+        <h2 class="script-heading reveal">Leave A Message</h2>
+        <p class="rsvp-subtitle reveal">
+          SHARE YOUR LOVE , WISHES , OR A NOTE<br />
+          FOR THE HAPPY COUPLE !
+        </p>
+
+        <form class="rsvp-form reveal" id="rsvpForm" novalidate>
+          <!-- Your Name -->
+          <div class="form-group">
+            <label for="guestName" class="form-label">
+              <span>YOUR NAME</span>
+              <span class="required-dot" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="guestName"
+              name="guestName"
+              class="form-input"
+              required
+              autocomplete="name"
+            />
+          </div>
+
+          <!-- Attendance Radio Cards -->
+          <div class="form-group">
+            <span class="form-label" id="attendanceLabel">
+              <span>WILL YOU BE ATTENDING OUR DAY ?</span>
+              <span class="required-dot" aria-hidden="true">*</span>
+            </span>
+
+            <div class="rsvp-options" role="radiogroup" aria-labelledby="attendanceLabel">
+              <label class="rsvp-option" data-choice="YES">
+                <input type="radio" name="attending" value="YES" required />
+                <span class="rsvp-option__badge">A</span>
+                <span class="rsvp-option__text">YES</span>
+              </label>
+
+              <label class="rsvp-option" data-choice="NO">
+                <input type="radio" name="attending" value="NO" />
+                <span class="rsvp-option__badge">B</span>
+                <span class="rsvp-option__text">NO</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Congratulations Input -->
+          <div class="form-group">
+            <label for="guestMessage" class="form-label">
+              <span>WRITE YOUR CONGRATULATIONS</span>
+              <span class="required-dot" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="guestMessage"
+              name="guestMessage"
+              class="form-input"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn-send">
+            <span>SEND</span>
+            <span aria-hidden="true">&rarr;</span>
+          </button>
+
+          <div class="rsvp-feedback" id="rsvpFeedback" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+    </main>
+
+    <!-- =====================================================================
+         7. CHILDHOOD KEEPSAKE PORTRAIT & FOOTER
+         ===================================================================== -->
+    <footer class="keepsake-footer">
+      <!-- Botanical Floral Divider -->
+      <div class="botanical-divider reveal" aria-hidden="true">
+        <svg viewBox="0 0 320 64" fill="none" stroke="currentColor" stroke-width="1.1">
+          <circle cx="160" cy="34" r="5" fill="currentColor" />
+          <path d="M160 29 C153 14, 167 14, 160 29 Z" />
+          <path d="M164 31 C178 20, 183 33, 165 34 Z" />
+          <path d="M163 37 C175 49, 163 56, 159 39 Z" />
+          <path d="M156 37 C145 49, 138 37, 155 34 Z" />
+          <path d="M156 31 C142 21, 149 12, 158 29 Z" />
+          <path d="M144 35 Q95 36, 22 33" />
+          <path d="M176 35 Q225 36, 298 33" />
+          <path d="M128 35 C118 22, 106 22, 102 31 C111 35, 120 35, 128 35 Z" />
+          <path d="M100 35 C88 21, 74 22, 70 31 C80 35, 90 35, 100 35 Z" />
+          <path d="M72 34 C60 22, 48 23, 44 31 C54 34, 63 34, 72 34 Z" />
+          <path d="M118 36 C108 48, 96 48, 92 40 C102 36, 110 36, 118 36 Z" />
+          <path d="M88 36 C76 49, 64 48, 60 40 C70 36, 79 36, 88 36 Z" />
+          <path d="M192 35 C202 22, 214 22, 218 31 C209 35, 200 35, 192 35 Z" />
+          <path d="M220 35 C232 21, 246 22, 250 31 C240 35, 230 35, 220 35 Z" />
+          <path d="M248 34 C260 22, 272 23, 276 31 C266 34, 257 34, 248 34 Z" />
+          <path d="M202 36 C212 48, 224 48, 228 40 C218 36, 210 36, 202 36 Z" />
+          <path d="M232 36 C244 49, 256 48, 260 40 C250 36, 241 36, 232 36 Z" />
+        </svg>
+      </div>
+
+      <!-- Scalloped-Arch Childhood Keepsake Photo Frame -->
+      <div class="scalloped-frame-wrap reveal">
+        <svg class="scalloped-frame-svg" viewBox="0 0 320 340" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="scallopedClip">
+              <path d="M36 48 H78 C115 10, 205 10, 242 48 H284 V288 H242 C205 326, 115 326, 78 288 H36 Z" />
+            </clipPath>
+          </defs>
+          <!-- Clipped Nostalgic Couple Childhood Portrait -->
+          <image
+            href="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=700&q=80"
+            x="28"
+            y="14"
+            width="264"
+            height="312"
+            preserveAspectRatio="xMidYMid slice"
+            clip-path="url(#scallopedClip)"
+          />
+          <!-- Outer Mahogany Frame Stroke -->
+          <path
+            d="M36 48 H78 C115 10, 205 10, 242 48 H284 V288 H242 C205 326, 115 326, 78 288 H36 Z"
+            fill="none"
+            stroke="#5D2F24"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+
+      <!-- Ornamental Designer Credit Pill -->
+      <div class="designer-badge reveal">
+        <span class="designer-badge__end" aria-hidden="true">
+          <span class="designer-badge__bar"></span>
+          <span class="designer-badge__box"><span class="designer-badge__dot"></span></span>
+        </span>
+        <span class="designer-badge__text">Eng / Ziad Sayed</span>
+        <span class="designer-badge__end" aria-hidden="true">
+          <span class="designer-badge__box"><span class="designer-badge__dot"></span></span>
+          <span class="designer-badge__bar"></span>
+        </span>
+      </div>
+
+      
+      <p class="copyright-text reveal">&copy; Eng / Ziad Sayed . all rights reserved</p>
+    </footer>
+  </div>
+
+  <!-- =======================================================================
+       VANILLA JAVASCRIPT (COUNTDOWN, SCROLL REVEAL, INTERACTIVE RSVP)
+       ======================================================================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initScrollAnimations();
+      initCountdownTimer();
+      initRsvpForm();
+    });
+
+    /**
+     * 1. Smooth Scroll Entrance Reveal
+     */
+    function initScrollAnimations() {
+      const elements = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        elements.forEach((el) => el.classList.add('is-visible'));
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -30px 0px' }
+      );
+
+      elements.forEach((el) => observer.observe(el));
+    }
+
+    /**
+     * 2. Live Countdown to August 23, 2026 at 8:00 PM (Cairo Time)
+     * Automatically renders 0 : 00 : 00 : 00 once the event timestamp has elapsed.
+     */
+    function initCountdownTimer() {
+      const daysEl = document.getElementById('cd-days');
+      const hoursEl = document.getElementById('cd-hours');
+      const minutesEl = document.getElementById('cd-minutes');
+      const secondsEl = document.getElementById('cd-seconds');
+
+      const weddingDate = new Date('2026-08-23T20:00:00+03:00').getTime();
+      const pad = (val) => String(Math.max(0, val)).padStart(2, '0');
+
+      function tick() {
+        const remaining = weddingDate - Date.now();
+        if (remaining <= 0) {
+          daysEl.textContent = '0';
+          hoursEl.textContent = '00';
+          minutesEl.textContent = '00';
+          secondsEl.textContent = '00';
+          return;
+        }
+
+        const totalSec = Math.floor(remaining / 1000);
+        daysEl.textContent = String(Math.floor(totalSec / 86400));
+        hoursEl.textContent = pad(Math.floor((totalSec % 86400) / 3600));
+        minutesEl.textContent = pad(Math.floor((totalSec % 3600) / 60));
+        secondsEl.textContent = pad(totalSec % 60);
+      }
+
+      tick();
+      setInterval(tick, 1000);
+    }
+
+    /**
+     * 3. Interactive RSVP Radio Cards & Form Submission Validation
+     */
+    function initRsvpForm() {
+      const form = document.getElementById('rsvpForm');
+      const optionCards = document.querySelectorAll('.rsvp-option');
+      const feedbackEl = document.getElementById('rsvpFeedback');
+
+      optionCards.forEach((card) => {
+        card.addEventListener('click', () => {
+          optionCards.forEach((c) => c.classList.remove('is-selected'));
+          card.classList.add('is-selected');
+          const radio = card.querySelector('input[type="radio"]');
+          if (radio) radio.checked = true;
+        });
+      });
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('guestName').value.trim();
+        const selectedRadio = form.querySelector('input[name="attending"]:checked');
+        const message = document.getElementById('guestMessage').value.trim();
+
+        feedbackEl.className = 'rsvp-feedback';
+
+        if (!name || !selectedRadio || !message) {
+          feedbackEl.textContent = 'Please complete all required fields (*) before sending your note.';
+          feedbackEl.classList.add('is-error');
+          return;
+        }
+
+        const attendanceText =
+          selectedRadio.value === 'YES'
+            ? 'We cannot wait to celebrate with you!'
+            : 'Thank you for sending your warm wishes!';
+
+        feedbackEl.textContent = `Thank you, ${name}! Your message to Hamdy & Esraa has been recorded. ${attendanceText}`;
+        feedbackEl.classList.add('is-success');
+
+        form.reset();
+        optionCards.forEach((c) => c.classList.remove('is-selected'));
+      });
+    }
+  </script>
+</body>
+</html>
